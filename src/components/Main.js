@@ -22,6 +22,13 @@ class Main extends Component {
     })
   }
 
+  addNew = (text) => {
+    const newId = this.state.listOfToDos.length;
+    this.setState({
+      listOfToDos: this.state.listOfToDos.concat({id: newId, text: text, done: false})
+    })
+  }
+
   componentDidMount = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
@@ -43,7 +50,7 @@ class Main extends Component {
           <section><ListOfAll todos={this.state.listOfToDos} toggler={this.toggleItem}/></section>
         </Route>
         <Route path="/new">
-          <section><New /></section>
+          <section><New adder={this.addNew}/></section>
         </Route>
         <Route path="/trash">
           <section><Trash /></section>
