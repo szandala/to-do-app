@@ -6,7 +6,7 @@ import {BrowserRouter as Router, NavLink} from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
     <header>Tu jest nagłówek</header>
     <main>
 
