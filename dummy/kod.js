@@ -53,8 +53,6 @@ class Main extends React.Component {
 
 function App() {
 
-
-
     return (
         <>
             <header>Tu jest nagłówek</header>
